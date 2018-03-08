@@ -1,6 +1,29 @@
 # Turning design mockups into code with deep learning
-[![Cloud GPU](https://img.shields.io/badge/Run%20experiment%20on-FloydHub-blue.svg)](https://www.floydhub.com/emilwallner/projects/picturetocode)
 [![MIT](https://img.shields.io/cocoapods/l/AFNetworking.svg)](https://github.com/emilwallner/Screenshot-to-code-in-Keras/blob/master/LICENSE)
+
+### 使用 RussellCloud 两步复现 Screenshot-to-code-in-Keras
+
+#### 步骤一：
+
+搞定一个平台账号，[点我](http://russellcloud.com/welcome)，创建名为 `Screenshot-to-code-in-Keras` 的 `keras` 项目。
+
+```bash
+pip install -U russell-cli
+```
+
+#### 步骤二：
+
+克隆复现
+
+```bash
+git clone git@github.com:RussellCloud/Screenshot-to-code-in-Keras.git
+cd Screenshot-to-code-in-Keras
+russell login
+russell init --name Screenshot-to-code-in-Keras
+russell run --mode jupyter --data b395cfe7c07a42b7bf16b016bd22a25a:data --data b9702830c99e4c72920f08e08b9d2765:weights
+```
+
+
 
 This is the code for the article ['Turning design mockups into code with deep learning'](https://blog.floydhub.com/Turning-design-mockups-into-code-with-deep-learning/) on FloydHub's blog. 
 
@@ -31,16 +54,6 @@ A quick overview of the process:
 
 ## Installation
 
-### FloydHub
-FloydHub is hands down the best option to run models on cloud GPUs: [floydhub.com](https://www.floydhub.com/)
-``` bash
-pip install floyd-cli
-floyd login
-git clone https://github.com/emilwallner/Screenshot-to-code-in-Keras
-cd Screenshot-to-code-in-Keras/floydhub 
-floyd init projectname
-floyd run --gpu --env tensorflow-1.4 --data emilwallner/datasets/imagetocode/2:data --data emilwallner/datasets/html_models/1:weights --mode jupyter
-```
 ### Local
 ``` bash
 pip install keras
@@ -50,13 +63,13 @@ pip install h5py
 pip install jupyter
 ```
 ```
-git clone https://github.com/emilwallner/Screenshot-to-code-in-Keras
+git clone git@github.com:RussellCloud/Screenshot-to-code-in-Keras.git
 cd Screenshot-to-code-in-Keras/local
 jupyter notebook
 ```
 Go do the desired notebook, files that end with '.ipynb'. To run the model, go to the menu then click on Cell > Run all
 
-The final version, the Bootstrap version, is prepared with a small set to test run the model. If you want to try it with all the data, you need to download the data here: https://www.floydhub.com/emilwallner/datasets/imagetocode, and specify the correct ```dir_name```.
+The final version, the Bootstrap version, is prepared with a small set to test run the model.
 
 ## Folder structure
 
